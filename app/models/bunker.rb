@@ -1,0 +1,2 @@
+class Bunker < ApplicationRecord
+end
