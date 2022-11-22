@@ -9,7 +9,7 @@ class BookingController < ApplicationController
   end
 
   def create
-    @booking = Booking.find(bunker_params)
+    @booking = Booking.new(bunker_params)
     @booking.bunker = @bunker
     @booking.save
   end
