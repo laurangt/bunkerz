@@ -13,7 +13,11 @@ class BunkersController < ApplicationController
     @bunker = Bunker.new(user_params)
     @bunker.user = @user
     @bunker.save
+  end
 
+  def destroy
+    @bunker = Bunker.find(params[:id])
+    @bunker.destroy
   end
 
 private
