@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @test = "hello"
     @user = current_user
   end
 end
