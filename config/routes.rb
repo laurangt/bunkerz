@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get "/profile", to: "pages#profile"
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users do
-    resources :bunkers, only: [:index, :new, :create]
+  resources :bunkers, only: [:index, :new, :create, :destroy] do
+    resources :bookings, only: [:new, :create]
   end
-  resources :bunkers, only: [:destroy]
+  resources :bookings, only: [:show, :destroy]
+
 end
