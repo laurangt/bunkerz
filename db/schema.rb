@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_103000) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_22_133656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "check_in_date"
+    t.date "check_out_date"
+    t.bigint "user_id", null: false
+    t.bigint "bunker_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "status", default: false
+    t.index ["bunker_id"], name: "index_bookings_on_bunker_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "bunkers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,7 +35,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_103000) do
     t.string "description"
     t.integer "capacity"
     t.float "price"
+    t.bigint "city_id", null: false
+    t.index ["city_id"], name: "index_bunkers_on_city_id"
     t.index ["user_id"], name: "index_bunkers_on_user_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,5 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_103000) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "bunkers"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "bunkers", "cities"
   add_foreign_key "bunkers", "users"
 end
