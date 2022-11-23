@@ -1,8 +1,11 @@
 class BunkersController < ApplicationController
-  before_action :set_user, only: %i[new create]
 
   def index
     @bunkers = Bunker.all
+  end
+
+  def show
+    @bunker = Bunker.new(params[:id])
   end
 
   def new
@@ -10,28 +13,29 @@ class BunkersController < ApplicationController
   end
 
   def create
-    @bunker = Bunker.new(user_params)
-    @bunker.user = @user
-    @bunker.save
+    @bunker = Bunker.new(bunker_params)
+    @bunker.user = current_user
+    if @bunker.save
+      redirect_to profile_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @bunker = Bunker.find(params[:id])
     @bunker.destroy
-  end
-
-  def show
-    @bunker = Bunker.new(params[:id])
+    redirect_to bunkers_path
   end
 
 private
 
-  def set_user
-    @users = User.find(params[:user_id])
-  end
+  # def set_user
+  #   @user = User.find(params[:user_id])
+  # end
 
-  def user_params
-    params.require(:user).permit(:location, :title, :desciption, :capacity, :price)
+  def bunker_params
+    params.require(:bunker).permit(:location, :title, :description, :price, :feature, :summary, :photo, :user_id)
   end
 
 end
