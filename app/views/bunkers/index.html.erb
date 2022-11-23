@@ -1,2 +1,13 @@
-<h1>bunkers index</h1>
-<%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
+<h1>Bunkers Index</h1>
+
+<ul><% @bunkers.each do |bunker| %>
+  <li><%= bunker.title %></li>
+  <li><%= bunker.capacity %></li>
+  <li><%= bunker.description %></li>
+  <li><%= bunker.feature %></li>
+  <li><%= bunker.summary %></li>
+  <li><%= bunker.location %></li>
+  <li><%= bunker.price %></li>
+<% end %>
+</ul>
+
