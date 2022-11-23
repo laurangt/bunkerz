@@ -1,11 +1,14 @@
-<h1>Bunkers Index</h1>
-
-<ul><% @bunkers.each do |bunker| %>
-  <li><%= bunker.title %></li>
-  <li><%= bunker.description %></li>
-  <li><%= bunker.feature %></li>
-  <li><%= bunker.summary %></li>
-  <li><%= bunker.location %></li>
-  <li><%= bunker.price %></li>
-<% end %>
-</ul>
+<h1 class="m-auto">Bunkers in Innsbruck</h1>
+  <% @bunkers.each do |bunker| %>
+<div class="cards" style="margin: auto;">
+  <div class="card mb-3 p-2 d-flex" style="height: 100%; width: 50vw; text-align: center">
+      <% if bunker.photo.key.present? %>
+        <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+      <% end %>
+      <h2><%= bunker.title %></h2>
+      <%= bunker.summary %>
+      <p><%= bunker.price %>€</p>
+  </div>
+    <% end %>
+<div>
+<img src="https://www.google.com/mymaps/viewer?mid=11oEmSD7VUkqVTHh3MVkmTtdi4Ds&hl=en" alt="">
