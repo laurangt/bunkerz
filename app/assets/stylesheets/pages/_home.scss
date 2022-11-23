@@ -1,5 +1,11 @@
 // Specific CSS for your home-page
 
-#body {
-  background-image: url("/bunker_grafity.jpeg");
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.title {
+  color: rgb(255, 255, 255)
 }
