@@ -2,9 +2,18 @@ class BunkersController < ApplicationController
 
   def index
     @bunkers = Bunker.all
+    @markers = @bunkers.geocoded.map do |bunker|
+      {
+        lat: bunker.latitude,
+        lng: bunker.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bunker: bunker })
+      }
+    end
   end
 
   def show
+    @review = Review.new
+    @booking = Booking.new
     @bunker = Bunker.find(params[:id])
   end
 

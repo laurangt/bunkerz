@@ -19,14 +19,13 @@ class BookingController < ApplicationController
     end
   end
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
+  def booking_accepted?
+      @booking.status == true
   end
 
 private
 
   def booking_params
-    params.require(:booking).permit(:check_in_date, :check_out_date, :bunker_id, :user_id)
+    params.require(:booking).permit(:check_in_date, :check_out_date, :bunker, :user)
   end
 end

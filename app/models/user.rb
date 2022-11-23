@@ -6,5 +6,4 @@ class User < ApplicationRecord
   has_many :bunkers, through: :bookings
   has_many :bookings
 
-  #has_many :bunkers, through: :bookings
 end

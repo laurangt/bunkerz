@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :bunkers, only: [:index, :new, :create, :destroy, :show] do
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: [:new, :create]
   end
-  resources :bookings, only: [:show, :destroy]
-
+  resources :bookings, only: [:show]
+  resources :reviews, only: [:destroy]
 end

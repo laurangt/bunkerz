@@ -1,30 +1,36 @@
-<%= link_to "Home", root_path %>
-
-<p>email:<%= @user.email %></p>
-<%= @user.username %>
-<%= @user.avatar_url %>
-<%= @user.bio %>
-
-<p>Bio:</p>
-<p>Hello there. I’m Paul, 35, from Austria, farmer all my life. I am renting out my bunker for any kind of events, but mainly parties. Hope you enjoy it.</p>
-<p>languages</p>
-<ul>
-<li>English</li>
-<li>German</li>
-<li>Italian</li>
-</ul>
-
-<h2>My Bunkers</h2>
-<% @bunkers.each do |bunker| %>
-  <% if bunker.user_id == @user.id %>
-    <%= link_to bunker.image_url, bunker_path(bunker) %>
-    <p><%= link_to "Delete bunker", profile_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
-  <% end %>
+<%= link_to root_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
 <% end %>
 
+<%# My profile info %>
+<div>
+  <p>email:<%= @user.email %></p>
+  <p>username:<%= @user.username %></p>
+  <%= @user.avatar_url %>
+  <%= @user.bio %>
+</div>
+
+<%# My bunkers as a host %>
+<div>
+  <h2>My Bunkers</h2>
+  <p><%= link_to "Create new bunker", new_bunker_path %></p>
+
+  <% @bunkers.each do |bunker| %>
+    <% if bunker.user_id == @user.id %>
+      <%#= link_to bunker.photo.path, bunker_path(bunker) %>
+      <%= bunker.title %>
+    <p><%= link_to "Delete bunker", bunker_path(bunker), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+    <% end %>
+      <%#= cl_image_tag bunker.photo.path, height: 100, width: 100, crop: :fill %>
+  <% end %>
+</div>
+
+<%# Bookings %>
+<div>
 <h2>Bookings</h2>
 <% @user.bookings.each do |booking| %>
   <div>
     <%= link_to booking.bunker.image_url, bunker_path %>
   </div>
 <% end %>
+</div>

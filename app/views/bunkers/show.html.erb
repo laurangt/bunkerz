@@ -1,11 +1,62 @@
-<h1> <%= @bunker.title %></h1>
-<%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
-
-<% @bunkers.each do |bunker| %>
-  <p><%= bunker.description %></p>
-  <%= bunker.feature %>
-  <%= bunker.summary %>
-  <%= bunker.location %>
-  <%= bunker.price %>
-  <button type="button" class="btn btn-warning"><%= link_to "Delete bunker", bunkers_path(bunker), class: "text-dark text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+<%= link_to bunkers_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
 <% end %>
+
+<%# Bunker card details %>
+<div>
+  <h1> <%= @bunker.title %></h1>
+  <%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <p>Description:</p>
+  <%= @bunker.description %>
+  <p>Location: <%= @bunker.location %></p>
+  <%= @bunker.summary %>
+
+  <p>Specialfeatures:</p>
+  <%= @bunker.feature %>
+
+  <p> Price: <%= @bunker.price %>€</p>
+</div>
+
+<h2>Reviews</h2>
+<%# Submit new reviews %>
+<div class="submit-review">
+  <%= simple_form_for [@bunker, @review] do |f| %>
+    <label for="review">Add a review</label><br>
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select([["Please select one", ""], 5, 4, 3, 2, 1]) %>
+    <%= f.input :comment, placeholder:"Please enter your comment here" %>
+    <%= f.submit "Submit your review", class: "btn btn-default" %> <br><br>
+  <% end %>
+</div>
+
+<%# Display reviews %>
+<% @bunker.reviews.each do |review| %>
+  <%= review.user.email %>
+  <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+  <%= review.comment %>
+  <%= review.rating %>
+  <p><%= link_to "Delete review", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+<% end %>
+
+<%# Booking form with calendar to be added %>
+<div class="form-group">
+  <%= simple_form_for [@bunker, @booking] do |f| %>
+    <%= f.input :check_in_date, as: :string, required: false, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
+    <%= f.input :check_out_date, as: :string, required: false, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
+    <%#= f.label :party_size %>
+    <%#= f.select :number_of_guests, options_for_select([["Please select one", ""], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) %>
+
+    <h5>Subtotal: <strong>$<%= @bunker.price %></strong></h5><br>
+
+    <%= f.submit "Request to book"%>
+    <br><br>
+  <% end %>
+</div>
+
+<%# Map not working yet %>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
