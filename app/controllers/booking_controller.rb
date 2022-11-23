@@ -9,9 +9,14 @@ class BookingController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bunker_params)
+    @booking = Booking.new(booking_params)
     @booking.bunker = @bunker
-    @booking.save
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bunkers_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -21,7 +26,7 @@ class BookingController < ApplicationController
 
 private
 
-  def bunker_params
-    params.require(:bunker).permit(:check_in_date, :check_out_date, :bunker_id)
+  def booking_params
+    params.require(:booking).permit(:check_in_date, :check_out_date, :bunker_id, :user_id)
   end
 end

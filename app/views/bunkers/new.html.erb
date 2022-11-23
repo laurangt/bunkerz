@@ -1,2 +1,15 @@
-<h1>Bunkers#new</h1>
-<p>Find me in app/views/bunkers/new.html.erb</p>
+<h1>Add a new bunker</h1>
+
+<%= simple_form_for (@bunker) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :location %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :feature %>
+  <%= f.input :summary %>
+  <%= f.input :photo, as: :file %>
+  <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Go back", profile_path %>
