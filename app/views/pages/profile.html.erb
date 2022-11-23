@@ -1,6 +1,21 @@
-<% @user.email %>
+<%= @user.email %>
 <%= @user.username %>
-<%# @user.avatar %>
-<%# @user.bunkers.each do |bunker| %>
-  <%# bunker.all %>
-<%# end %>
+<%= @user.avatar_url %>
+<%= @user.bio %>
+
+<h2>My Bunkers</h2>
+<% @bunkers.each do |bunker| %>
+  <% if bunker.user_id == @user.id %>
+    <%= link_to bunker.image_url, bunker_path(bunker) %>
+    <%= link_to "Delete bunker", profile_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %>
+  <% end %>
+<% end %>
+
+<h2>Bookings</h2>
+<% @user.bookings.each do |booking| %>
+  <div>
+    <%= link_to booking.bunker.image_url, bunker_path %>
+  </div>
+<% end %>
+
+<%= link_to "Home", root_path %>
