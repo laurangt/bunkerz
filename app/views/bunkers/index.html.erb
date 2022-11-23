@@ -8,7 +8,6 @@
       <h2><%= bunker.title %></h2>
       <%= bunker.summary %>
       <p><%= bunker.price %>€</p>
-      <p><%= link_to "Delete bunker", bunker_path(bunker), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
   </div>
     <% end %>
 <div>
