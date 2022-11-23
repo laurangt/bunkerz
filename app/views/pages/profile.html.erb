@@ -1,13 +1,24 @@
-<%= @user.email %>
+<%= link_to "Home", root_path %>
+
+<p>email:<%= @user.email %></p>
 <%= @user.username %>
 <%= @user.avatar_url %>
 <%= @user.bio %>
+
+<p>Bio:</p>
+<p>Hello there. I’m Paul, 35, from Austria, farmer all my life. I am renting out my bunker for any kind of events, but mainly parties. Hope you enjoy it.</p>
+<p>languages</p>
+<ul>
+<li>English</li>
+<li>German</li>
+<li>Italian</li>
+</ul>
 
 <h2>My Bunkers</h2>
 <% @bunkers.each do |bunker| %>
   <% if bunker.user_id == @user.id %>
     <%= link_to bunker.image_url, bunker_path(bunker) %>
-    <%= link_to "Delete bunker", profile_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %>
+    <p><%= link_to "Delete bunker", profile_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
   <% end %>
 <% end %>
 
@@ -17,5 +28,3 @@
     <%= link_to booking.bunker.image_url, bunker_path %>
   </div>
 <% end %>
-
-<%= link_to "Home", root_path %>
