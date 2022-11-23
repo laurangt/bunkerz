@@ -1,2 +1,11 @@
-<h2>Hello</h2>
+<h1> <%= @bunker.title %></h1>
 <%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
+
+<% @bunkers.each do |bunker| %>
+  <p><%= bunker.description %></p>
+  <%= bunker.feature %>
+  <%= bunker.summary %>
+  <%= bunker.location %>
+  <%= bunker.price %>
+  <button type="button" class="btn btn-warning"><%= link_to "Delete bunker", bunkers_path(bunker), class: "text-dark text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+<% end %>
