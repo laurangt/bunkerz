@@ -20,6 +20,10 @@ class BunkersController < ApplicationController
     @bunker.destroy
   end
 
+  def show
+    @bunker = Bunker.new(params[:id])
+  end
+
 private
 
   def set_user
