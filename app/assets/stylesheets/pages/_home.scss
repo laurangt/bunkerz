@@ -3,7 +3,9 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 800px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 733px;
   padding: 200px 0;
   font-size: xx-large;
 }
