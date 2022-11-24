@@ -30,25 +30,26 @@
   <% end %>
 </div>
 
-<%# Bookings %>
 
+<%# Bookings %>
 <div>
   <h2>Bookings</h2>
   <% if @bookings.nil? %>
     <p>You have no bookings!</p>
   <% else %>
     <% @bookings.each do |booking| %>
-      <div>
-        <%= link_to bunker_path(bunker) do %>
-          <% if bunker.photo.present? %>
-            <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
-          <%= bunker.title %>
+      <div class="card mb-3">
+        <%= link_to bunker_path(booking.bunker.id) do %>
+          <% if booking.bunker.photo.present? %>
+            <%= cl_image_tag booking.bunker.photo.key, height: 100, width: 100, crop: :fill %>
           <% end %>
+          <%= booking.bunker.title %>
         <% end %>
-      <%= booking.check_in_date %>
-      <%= booking.check_out_date %>
-      <%= booking.guests %>
-      <%= booking.status %>
+      <p>Check-in date:<%= booking.check_in_date %></p>
+      <p>Check-out date:<%= booking.check_out_date %></p>
+      <p>Guests:<%= booking.guests %></p>
+      <p>Booking status:<%= booking.status %></p>
+      <p><%= link_to "Delete booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
       </div>
     <% end %>
   <% end %>
