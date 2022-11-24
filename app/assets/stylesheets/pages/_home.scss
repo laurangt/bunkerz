@@ -1,17 +1,31 @@
 // Specific CSS for your home-page
 
 .banner {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
-  height: 800px;
-  padding: 200px 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  object-fit: cover;
+  height: 749px;
+  padding: 100px 0;
   font-size: xx-large;
 }
 
 .title {
-  color: rgb(255, 255, 255)
+  color: #ffffff;
+  font-size: 72px;
+  width: 500px;
+  letter-spacing: 11px;
+  text-shadow: 0px 4px 10px grey;
+  font-family: 'Roboto', sans-serif;
 }
 
-p{
-  text-decoration: none;
+.custom-select {
+  background: rgb(2, 2, 2);
+  color: #ffffff;
+  width: 300px;
+  height: 50px;
+  font-size: large;
+  text-align-last:left;
+  padding-left: 12px;
 }
