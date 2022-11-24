@@ -7,6 +7,7 @@
   <div class="bunker_info">
     <div>
       <h1 class="bunker_title"> <%= @bunker.title %></h1>
+      <h2 class="host_title"> Bunker hosted by <%= @bunker.user.username %></h2>
       <p><%= @bunker.location %></p>
       <p><%= @bunker.summary %></p>
       <%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
@@ -29,11 +30,11 @@
 
 
   <div class="info">
-    <div>
+    <div class="bunker_description">
       <h2>The bunker:</h2>
       <p><%= @bunker.description %></p>
     </div>
-    <div>
+    <div class="bunker_feature">
       <h2>Special features:</h2>
       <p><%= @bunker.feature %></p>
     </div>
