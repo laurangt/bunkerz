@@ -1,19 +1,16 @@
 // Specific CSS for your home-page
 
 .banner {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 733px;
+  object-fit: cover;
+  height: 749px;
   padding: 200px 0;
   font-size: xx-large;
 }
 
 .title {
   color: rgb(255, 255, 255)
-}
-
-p{
-  text-decoration: none;
 }
