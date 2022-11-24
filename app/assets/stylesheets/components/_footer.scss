@@ -19,7 +19,11 @@
 .footer-links a:hover {
   opacity: 0.75;
 }
+.footer-copyright {
+  margin-left: 20px;
+}
 .footer-copyright > a {
   color: rgb(255, 0, 255);
   text-decoration: none;
+  margin: 10px;
 }
