@@ -1,11 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/736x/01/9c/5f/019c5f6fb073f518deda8ff8be06229b--photography-school-night-photography.jpg);">
   <div class="container">
     <h1 class="title">Bonkers for Bunkerz</h1>
-
-    <form id="search">
-      <input type="search" id="location" placeholder="Location">
-      <p><%= link_to "Search", bunkers_path %></p>
+    <form action="get">
+      <div class="form-group col-md-3">
+        <select id="location" class="custom-select">
+          <option selected>Location</option>
+          <option value="Innsbruck">Innsbruck, Austria</option>
+          <option value="Berchtesgaden">Berchtesgaden, Germany</option>
+          <option value="Himara">Himara, Albania</option>
+        </select>
+        <p><%= link_to "Submit", bunkers_path %></p>
+      </div>
     </form>
-    <%= link_to "Profile", profile_path %>
   </div>
 </div>
+
+<%# need to add when submit redirect to input path with location %>

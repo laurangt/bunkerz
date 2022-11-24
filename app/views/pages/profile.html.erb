@@ -1,21 +1,54 @@
-<%= @user.email %>
-<%= @user.username %>
-<%= @user.avatar_url %>
-<%= @user.bio %>
+<%= link_to root_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
+<% end %>
 
-<h2>My Bunkers</h2>
-<% @bunkers.each do |bunker| %>
-  <% if bunker.user_id == @user.id %>
-    <%= link_to bunker.image_url, bunker_path(bunker) %>
-    <%= link_to "Delete bunker", profile_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %>
+<%# My profile info %>
+<div>
+  <p>email:<%= @user.email %></p>
+  <p>username:<%= @user.username %></p>
+  <%= @user.avatar_url %>
+  <%= @user.bio %>
+</div>
+
+<%# My bunkers as a host %>
+<div>
+  <h2>My Bunkers</h2>
+  <p><%= link_to "Create new bunker", new_bunker_path %></p>
+
+  <% @bunkers.each do |bunker| %>
+    <div class="card">
+      <% if bunker.user_id == @user.id %>
+        <%= link_to bunker_path(bunker) do %>
+          <% if bunker.photo.present? %>
+            <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+          <% end %>
+          <%#= bunker.title %>
+          <p><%= link_to "Delete bunker", bunker_path(bunker), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
 
-<h2>Bookings</h2>
-<% @user.bookings.each do |booking| %>
-  <div>
-    <%= link_to booking.bunker.image_url, bunker_path %>
-  </div>
-<% end %>
-
-<%= link_to "Home", root_path %>
+<%# Bookings %>
+<div>
+  <h2>Bookings</h2>
+  <% if @bookings.nil? %>
+    <p>You have no bookings!</p>
+  <% else %>
+    <% @bookings.each do |booking| %>
+      <div>
+        <%= link_to bunker_path(bunker) do %>
+          <% if bunker.photo.present? %>
+            <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+          <%= bunker.title %>
+          <% end %>
+        <% end %>
+      <%= booking.check_in_date %>
+      <%= booking.check_out_date %>
+      <%= booking.guests %>
+      <%= booking.status %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,6 +1,11 @@
 class BookingController < ApplicationController
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def show
+    @booking.bunker = Bunker.find(params[:bunker_id])
     @booking = Booking.find(params[:id])
   end
 
@@ -10,18 +15,14 @@ class BookingController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.bunker = @bunker
     @booking.user = current_user
+    @booking.bunker = Bunker.find(params[:bunker_id])
     if @booking.save
-      redirect_to bunkers_path
+      @booking.status = true
+      redirect_to booking_path(@booking)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to bunker_path(@bunker)
     end
-  end
-
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
   end
 
 private

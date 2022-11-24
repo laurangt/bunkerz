@@ -1,16 +1,26 @@
+<%= link_to root_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
+<% end %>
+
+<h1>Search bar to be added</h1>
 <h1 class="m-auto">Bunkers in Innsbruck</h1>
   <% @bunkers.each do |bunker| %>
 <div class="cards" style="margin: auto;">
   <div class="card mb-3 p-2 d-flex" style="height: 100%; width: 50vw; text-align: center">
       <% if bunker.photo.key.present? %>
-        <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
-      <% end %>
+        <%= link_to bunker_path(bunker) do %>
+          <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
       <h2><%= bunker.title %></h2>
       <%= bunker.summary %>
       <p><%= bunker.price %>€</p>
+      <%= bunker.id %>
+        <% end %>
+      <% end %>
   </div>
     <% end %>
 <div>
-<img src="https://www.google.com/mymaps/viewer?mid=11oEmSD7VUkqVTHh3MVkmTtdi4Ds&hl=en" alt="">
-
-<p><%= link_to "Go back", root_path %></p>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

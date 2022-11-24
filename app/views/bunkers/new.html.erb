@@ -1,3 +1,7 @@
+<%= link_to profile_path do %>
+  <i class="fa-solid fa-arrow-left"></i>
+<% end %>
+
 <h1>Add a new bunker</h1>
 
 <%= simple_form_for (@bunker) do |f| %>
@@ -11,5 +15,3 @@
   <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit %>
 <% end %>
-
-<%= link_to "Go back", profile_path %>

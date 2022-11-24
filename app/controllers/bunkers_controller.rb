@@ -2,10 +2,26 @@ class BunkersController < ApplicationController
 
   def index
     @bunkers = Bunker.all
+    @markers = @bunkers.geocoded.map do |bunker|
+      {
+        lat: bunker.latitude,
+        lng: bunker.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bunker: bunker })
+      }
+    end
   end
 
   def show
+    @review = Review.new
+    @booking = Booking.new
     @bunker = Bunker.find(params[:id])
+    @markers = @bunker.geocode.map do
+      {
+        lat: @bunker.latitude,
+        lng: @bunker.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bunker: @bunker })
+      }
+    end
   end
 
   def new
@@ -25,7 +41,7 @@ class BunkersController < ApplicationController
   def destroy
     @bunker = Bunker.find(params[:id])
     @bunker.destroy
-    redirect_to bunkers_path
+    redirect_to profile_path
   end
 
 private
