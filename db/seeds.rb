@@ -32,9 +32,18 @@ require "open-uri"
     price: 2000,
     feature: 'Bathroom',
     summary: 'Cooler',
-    user_id: 5
+    user_id: User.last.id
   )
 end
+
+Bunker.create!(
+  title: 'Mingds',
+  description: 'Nice',
+  price: 2000,
+  feature: 'Bathroom',
+  summary: 'Cooler',
+  user_id: User.last.id
+)
 # bunker1 = Bunker.new
 # bunker1.title = 'Inssbruck Bunker'
 # bunker1.description = 'Nice'

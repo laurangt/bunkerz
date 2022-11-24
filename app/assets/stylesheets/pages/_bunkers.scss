@@ -2,6 +2,19 @@ body {
   background-color: #192026;
 }
 
+.map {
+  height: 400px;
+  width: 300px;
+  position: sticky;
+  top: 0;
+  right: 0;
+}
+
+.container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 h1 {
   font-family: 'Roboto';
   color: #F5F5F5;
@@ -17,13 +30,30 @@ p {
   color: #F5F5F5;
 }
 
-.card {
+.index-map-cont {
+  display: flex;
+}
+
+.bunker {
   background-color: #192026;
-  
+  border: 2px;
+  border-color: #FFDFE1;
+  padding-right: 25px;
+  text-align: center;
+  height: 300px;
 }
 
 .cards {
+  width: 60vw;
   display: flex;
+  padding-right: 15px;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.cards-map {
+  padding-left: 15px;
+  padding-top: 50px;
+  display: flex;
+
 }
