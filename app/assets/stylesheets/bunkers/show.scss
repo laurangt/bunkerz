@@ -45,15 +45,36 @@
 .display {
   color: rgb(0, 0, 0);
   display: flex;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .display_user {
   width: 25%;
   border: 1px solid #FFDFE1;
   background-color: #FFDFE1;
+  border-radius: 25px;
+  text-align: center;
 }
 
 .display_rating {
   width: 75%;
   border: 1px solid #8E5AFB;
   background-color: #8E5AFB;
+  border-radius: 25px;
+  margin-left: 5px;
+}
+
+.display_rating .rating{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.display_rating > p{
+ text-align: center;
+ margin-left: 345px;
+}
+
+.display_rating .rating > p{
+  text-align: right;
+  margin-top: -25px;
 }

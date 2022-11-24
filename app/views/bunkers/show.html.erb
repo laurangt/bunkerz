@@ -55,7 +55,7 @@
             <%= f.select :rating, options_for_select([["Please select one", ""], 5, 4, 3, 2, 1]) %>
           </div>
         </div>
-          <%= f.submit "Submit your review", class: "btn btn-primary" %>
+          <%= f.submit "Submit your review", class: "btn btn-primary m-3" %>
         <% end %>
       </div>
 
@@ -67,9 +67,11 @@
             <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
           </div>
           <div class="display_rating">
-            <%= review.comment %>
-            <p>Rating:<%= review.rating %>⭐</p>
-            <p><%= link_to "Delete review", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+            <div class="rating">
+              <%= review.comment %>
+              <p>Rating: <%= review.rating %>⭐</p>
+            </div>
+            <p><%= link_to "Delete review", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-dark text-decoration-none" %></p>
           </div>
         </div>
       <% end %>
