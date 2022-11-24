@@ -2,7 +2,16 @@
   <i class="fa-solid fa-arrow-left"></i>
 <% end %>
 
-<h1>Search bar to be added</h1>
+<%# search-bar %>
+<%= form_with url: bunkers_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find bunker"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <h1 class="m-auto">Bunkers in Innsbruck</h1>
 <div class="cards" style="margin: auto;">
   <% @bunkers.each do |bunker| %>
