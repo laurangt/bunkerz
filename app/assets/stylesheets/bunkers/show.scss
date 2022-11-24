@@ -6,7 +6,6 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  border: 1px solid green;
 }
 
 .bunker_info .bunker_title {
@@ -15,7 +14,6 @@
 
 .form-group{
   align-content: center;
-  border: 1px solid green;
   margin-top: 110px;
   width: 50%;
 }
@@ -23,12 +21,10 @@
 .info {
   display: flex;
   justify-content: space-between;
-  border: 1px solid green;
   margin-bottom: 20px;
 }
 
 .info .bunker_feature {
-  border: 1px solid green;
   width: 50%;
   text-align: left;
 }
@@ -39,14 +35,13 @@
 }
 
 .review_map_card {
-  width: 50%;
+  width: 49%;
 }
 
 .display {
   color: rgb(0, 0, 0);
   display: flex;
   margin-right: 5px;
-  margin-left: 5px;
 }
 .display_user {
   width: 25%;
