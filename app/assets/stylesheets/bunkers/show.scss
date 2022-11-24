@@ -42,10 +42,18 @@
   width: 50%;
 }
 
+.display {
+  color: rgb(0, 0, 0);
+  display: flex;
+}
 .display_user {
-  border: 1px solid pink;
+  width: 25%;
+  border: 1px solid #FFDFE1;
+  background-color: #FFDFE1;
 }
 
 .display_rating {
-  border: 1px solid purple;
+  width: 75%;
+  border: 1px solid #8E5AFB;
+  background-color: #8E5AFB;
 }
