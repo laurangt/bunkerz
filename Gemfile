@@ -7,6 +7,7 @@ gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "geocoder"
 gem "pg_search"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

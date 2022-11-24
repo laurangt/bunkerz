@@ -6,55 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
-
-require "open-uri"
-
-# puts "Cleanig DB"
-# Bunker.destroy_all
-# User.destroy_all
-
-# puts "Creating Offers and Users"
-
-# user1 = User.new
-# user1.username = 'Sally'
-# user1.email = 'user1@timepeek.com'
-# user1.bio = 'Chef'
-# user1.password = '123456'
-# user1.password_confirmation = '123456'
-# user1.encrypted_password = '123456'
-# user1.save
-
-10.times do
+# require "open-uri"
+require 'faker'
+4.times do
   Bunker.create(
-    title: 'Ming',
-    description: 'Nice',
-    price: 2000,
+    location: Faker::Address.full_address,
+    title: Faker::App.name,
+    description: Faker::Movie.quote,
+    price: Faker::Number.number(digits: 4),
     feature: 'Bathroom',
     summary: 'Cooler',
+    image_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimagenes.20minutos.es%2Ffiles%2Fog_thumbnail%2Fuploads%2Fimagenes%2F2022%2F07%2F04%2Fbunker-blockhaus.jpeg&imgrefurl=https%3A%2F%2Fwww.20minutos.es%2Fviajes%2Fdestinos%2Fpueblo-cerca-madrid-colmenar-arroyo-puentes-bunker-guerra-civil-5025104%2F&tbnid=8bEVcrO401GFKM&vet=12ahUKEwirkaz388b7AhUGBRoKHfcrBgAQMygDegUIARDhAQ..i&docid=oe0fojeFctP6GM&w=1200&h=675&q=bunker&ved=2ahUKEwirkaz388b7AhUGBRoKHfcrBgAQMygDegUIARDhAQ",
     user_id: 5
   )
 end
-# bunker1 = Bunker.new
-# bunker1.title = 'Inssbruck Bunker'
-# bunker1.description = 'Nice'
-# bunker1.price =  2000
-# bunker1.feature = 'Bathroom'
-# bunker1.summary = 'Cooler'
-# bunker1.user_id = 2
-# bunker1.save
-
-
-
-# new_bunker = Bunker.new(
-#   title: 'Inssbruck Bunker',
-#   location: 'Inssbruck',
-#   description: 'Nice',
-#   price: 2000,
-#   feature: 'Bathroom',
-#   summary: 'Cooler',
-#   user_id: 4
-# )
-
-# new_bunker.save
-# puts new_bunker.title
