@@ -9,10 +9,4 @@ class PagesController < ApplicationController
     @bunkers = Bunker.all
     @bookings = current_user.bookings
   end
-
-  # def profile
-  #   @user = current_user
-  #   @bunkers = current_user.bunker
-  #   @bookings = current_user.booking
-  # end
 end

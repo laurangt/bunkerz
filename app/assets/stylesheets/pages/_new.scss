@@ -1,0 +1,40 @@
+h1 {
+width: 500px;
+height: 30px;
+margin-left: -25px;
+margin-bottom: 50px;
+top: 15px;
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 54px;
+color:white;
+}
+
+.button {
+width: 200px;
+height: 33px;
+background-color: #D667AA;
+border-radius: 5px;
+display: flex;
+text-align: center;
+align-items: center;
+padding: 20px;
+margin: auto;
+}
+
+.form-group {
+color: white;
+margin: auto;
+padding: 0px;
+}
+
+body {
+  background-color: #192026;
+}
+
+.form-control {
+  border-color: #8E5AFB;
+  border-width: 2px;
+  border-radius: 5px;
+}

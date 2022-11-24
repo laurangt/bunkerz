@@ -1,16 +1,20 @@
+<%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left"></i>
+<% end %>
 
-  <div class="container">
-    <div class="search-bar">
-      <%= link_to root_path do %>
-        <i class="fa-solid fa-arrow-left"></i>
-      <% end %>
-      <h1 id="search-bar">Search bar to be added</h1>
-    </div>
+<%# search-bar %>
+<%= form_with url: bunkers_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find bunker"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
-  </div>
 
   <div class="index-map-cont">
-    <div class="cards">
+    <div class="cards col-6">
       <% @bunkers.each do |bunker| %>
         <div class="bunker col-6">
             <%# if bunker.photo.key.present? %>
@@ -26,7 +30,7 @@
       <% end %>
     </div>
 
-    <div class="map"
+    <div class="map col-6"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

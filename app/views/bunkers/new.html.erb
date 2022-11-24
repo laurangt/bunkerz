@@ -1,17 +1,37 @@
+
 <%= link_to profile_path do %>
-  <i class="fa-solid fa-arrow-left"></i>
+  <i class="fa-solid fa-arrow-left" style="color: white"></i>
 <% end %>
 
-<h1>Add a new bunker</h1>
+<div class="container form-container" style="width:400px, padding:0px">
+  <h1> Add your bunker </h1>
+</div>
 
 <%= simple_form_for (@bunker) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :feature %>
-  <%= f.input :summary %>
-  <%= f.input :photo, as: :file %>
-  <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit %>
-<% end %>
+    <div class="form-group" style="width:400px;">
+       <%= f.input :title %>
+      </p>
+    </div>
+    <div class="form-group" style="width:400px">
+      <%= f.input :description %>
+    </div>
+    <div class="form-group" style="width:400px">
+      <%= f.input :location %>
+    </div>
+    <div class="form-group" style="width:400px">
+      <%= f.input :price %>
+    </div>
+    <div class="form-group" style="width:400px">
+      <%= f.input :feature %>
+    </div>
+    <div class="form-group" style="width:400px">
+      <%= f.input :summary %>
+    </div>
+    <div class="form-group" style="width:400px">
+     <%= f.input :photo, as: :file %>
+    </div>
+    <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <div class="button" style:="width:300px, align-items:center">
+       <%= f.button :submit%>
+    </div>
+  <% end %>

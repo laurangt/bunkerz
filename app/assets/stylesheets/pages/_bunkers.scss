@@ -32,26 +32,28 @@ p {
 
 .index-map-cont {
   display: flex;
+  gap: 10px;
 }
 
 .bunker {
+  display: flex;
   background-color: #192026;
   border: 2px;
+  border-style: solid;
   border-color: #FFDFE1;
-  padding-right: 25px;
   text-align: center;
   height: 300px;
+  justify-content: space-evenly;
 }
 
 .cards {
   width: 60vw;
   display: flex;
-  padding-right: 15px;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.cards-map {
+.index-map-cont {
   padding-left: 15px;
   padding-top: 50px;
   display: flex;

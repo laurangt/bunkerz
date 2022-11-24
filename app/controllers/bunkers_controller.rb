@@ -1,13 +1,29 @@
 class BunkersController < ApplicationController
 
   def index
-    @bunkers = Bunker.all
+    if params[:location]
+      if params[:query].present?
+        sql_query = "location ILIKE :location OR summary ILIKE :query"
+        @bunkers = Bunker.where(sql_query, query: "%#{params[:query]}%", location: "%#{params[:location]}%")
+      else
+        @bunkers = Bunker.all.where("location ILIKE ?", "%#{params[:location]}%")
+      end
+    else
+      if params[:query].present?
+        sql_query = "location ILIKE :query OR summary ILIKE :query"
+        @bunkers = Bunker.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @bunkers = Bunker.all
+      end
+    end
+
     @markers = @bunkers.geocoded.map do |bunker|
       {
         lat: bunker.latitude,
         lng: bunker.longitude,
         info_window: render_to_string(partial: "info_window", locals: { bunker: bunker })
       }
+
     end
   end
 
