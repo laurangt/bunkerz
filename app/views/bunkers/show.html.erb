@@ -53,8 +53,8 @@
   <% end %>
 </div>
 
-<%= @bunker.bookings do |booking| %>
-  <%= @booking.bunker.title %>
+<%= @bunker.bookings.each do |booking| %>
+  <%= booking.bunker.title %>
 <% end %>
 
 <%# Map %>
