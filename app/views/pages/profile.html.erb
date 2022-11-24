@@ -16,21 +16,39 @@
   <p><%= link_to "Create new bunker", new_bunker_path %></p>
 
   <% @bunkers.each do |bunker| %>
-    <% if bunker.user_id == @user.id %>
-      <%#= link_to bunker.photo.path, bunker_path(bunker) %>
-      <%= bunker.title %>
-    <p><%= link_to "Delete bunker", bunker_path(bunker), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
-    <% end %>
-      <%#= cl_image_tag bunker.photo.path, height: 100, width: 100, crop: :fill %>
+    <div class="card">
+      <% if bunker.user_id == @user.id %>
+        <%= link_to bunker_path(bunker) do %>
+          <% if bunker.photo.present? %>
+            <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+          <% end %>
+          <%#= bunker.title %>
+          <p><%= link_to "Delete bunker", bunker_path(bunker), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
 <%# Bookings %>
 <div>
-<h2>Bookings</h2>
-<% @user.bookings.each do |booking| %>
-  <div>
-    <%= link_to booking.bunker.image_url, bunker_path %>
-  </div>
-<% end %>
+  <h2>Bookings</h2>
+  <% if @bookings.nil? %>
+    <p>You have no bookings!</p>
+  <% else %>
+    <% @bookings.each do |booking| %>
+      <div>
+        <%= link_to bunker_path(bunker) do %>
+          <% if bunker.photo.present? %>
+            <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+          <%= bunker.title %>
+          <% end %>
+        <% end %>
+      <%= booking.check_in_date %>
+      <%= booking.check_out_date %>
+      <%= booking.guests %>
+      <%= booking.status %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

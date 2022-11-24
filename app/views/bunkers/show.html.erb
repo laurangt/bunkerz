@@ -5,17 +5,17 @@
 <%# Bunker card details %>
 <div>
   <h1> <%= @bunker.title %></h1>
+  <%= @bunker.summary %>
+  <%= @bunker.location %>
+  <p> Price: <%= @bunker.price %>€</p>
   <%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
 
   <p>Description:</p>
   <%= @bunker.description %>
-  <p>Location: <%= @bunker.location %></p>
-  <%= @bunker.summary %>
 
   <p>Specialfeatures:</p>
   <%= @bunker.feature %>
 
-  <p> Price: <%= @bunker.price %>€</p>
 </div>
 
 <h2>Reviews</h2>
@@ -44,13 +44,12 @@
   <%= simple_form_for [@bunker, @booking] do |f| %>
     <%= f.input :check_in_date, as: :string, required: false, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
     <%= f.input :check_out_date, as: :string, required: false, input_html: {class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
-    <%#= f.label :party_size %>
-    <%#= f.select :number_of_guests, options_for_select([["Please select one", ""], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) %>
+    <%= f.input :guests %>
 
-    <h5>Subtotal: <strong>$<%= @bunker.price %></strong></h5><br>
+    <p>Total: <strong><%= @bunker.price %>€/day</strong></p>
 
     <%= f.submit "Request to book"%>
-    <br><br>
+
   <% end %>
 </div>
 

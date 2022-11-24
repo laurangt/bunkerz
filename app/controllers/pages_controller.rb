@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @bunkers = Bunker.all
+    @bookings = current_user.bookings
   end
 
   # def profile
