@@ -25,24 +25,25 @@ user1.password_confirmation = '123456'
 user1.encrypted_password = '123456'
 user1.save
 
+10.times do
+  Bunker.create(
+    title: 'Innsbruck Bunker',
+    description: 'Nice',
+    bio: 'chef',
+    price: 2000,
+    feature
+    user: user1
+  )
+end
+# bunker1 = Bunker.new
+# bunker1.title = 'Inssbruck Bunker'
+# bunker1.description = 'Nice'
+# bunker1.price =  2000
+# bunker1.feature = 'Bathroom'
+# bunker1.summary = 'Cooler'
+# bunker1.user_id = 2
+# bunker1.save
 
-bunker1 = Bunker.new
-bunker1.title = 'Inssbruck Bunker'
-bunker1.description = 'Nice'
-bunker1.price =  2000
-bunker1.feature = 'Bathroom'
-bunker1.summary = 'Cooler'
-bunker1.user_id = 2
-bunker1.save
-
-bunker1 = Bunker.new
-bunker1.title = 'Inssbruck Bunker'
-bunker1.description = 'Nice'
-bunker1.price =  2000
-bunker1.feature = 'Bathroom'
-bunker1.summary = 'Cooler'
-bunker1.user_id = 2
-bunker1.save
 
 
 # new_bunker = Bunker.new(
