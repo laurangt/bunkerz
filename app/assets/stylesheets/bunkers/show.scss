@@ -2,13 +2,18 @@
   color: rgb(255, 255, 255)
 }
 
-.bunker_info {
+.bunker {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.bunker_info .bunker_title {
+.bunker .bunker_info {
+  border: 1px solid green;
+  width: 50%;
+}
+
+.bunker .bunker_title {
   color: #8E5AFB;
 }
 
