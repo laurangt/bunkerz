@@ -48,20 +48,22 @@
 
     <%# Bookings %>
     <div id="bookings" style="width: 60vw; padding-left: 50px; padding-top: 25px; border-left: 1px solid #8E5AFB;">
-      <h2 style="color: white;">Bookings</h2>
+      <h2 class="flex_bk" style="color: white;">Bookings</h2>
       <% if @bookings.nil? %>
         <p>You have no bookings!</p>
       <% else %>
         <% @bookings.each do |booking| %>
-          <div class="card mb-3">
+          <div class="booking_box mb-3">
             <%= link_to bunker_path(booking.bunker.id) do %>
               <% if booking.bunker.photo.present? %>
-                <%= cl_image_tag booking.bunker.photo.key, height: 100, width: 100, crop: :fill %>
+                <%= cl_image_tag booking.bunker.photo.key, height: 200, width: 200, crop: :fill %>
               <% end %>
-              <p style="text-decoration: none;"><%= booking.bunker.title %></p>
             <% end %>
-          <p>Checkin: <%= booking.check_in_date %> - Checkout: <%= booking.check_out_date %></p>
-          <p><%= link_to "Delete booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+            <div class="booking_text">
+              <h2 style="text-decoration: none;"><%= booking.bunker.title %></h2>
+              <p>Checkin: <%= booking.check_in_date %> - Checkout: <%= booking.check_out_date %></p>
+              <p><%= link_to "Delete booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %></p>
+            </div>
           </div>
         <% end %>
       <% end %>

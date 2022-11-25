@@ -17,4 +17,22 @@
 
 .flex_host {
   justify-content: center;
+  margin-bottom: 10px;
+}
+
+#bookings .card {
+  color: pink;
+}
+
+.booking_box {
+  display: flex;
+}
+
+.booking_text {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.flex_bk {
+  margin-bottom: 16px;
 }
