@@ -43,6 +43,7 @@ h1, h2, p {
   img{
     height: 200px;
     width: 22vw;
+    object-fit: cover;
   }
 
   a{
@@ -50,13 +51,21 @@ h1, h2, p {
   }
 
   #bunker-index-info{
-    min-height: 258px;
+    min-height: 150px;
     width: 22vw;
     border-bottom: 1px solid #FFDFE1;
     border-left: 1px solid #FFDFE1;
     border-right: 1px solid #FFDFE1;
     padding: 10px;
   }
+}
+
+.b_title_info {
+  color: #8E5AFB;
+}
+
+.bunker_price {
+  text-align: right;
 }
 
 .cards-index {
