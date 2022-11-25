@@ -42,7 +42,7 @@ h1, h2, p {
 
   img{
     height: 200px;
-    width: 19vw;
+    width: 22vw;
   }
 
   a{
@@ -51,7 +51,7 @@ h1, h2, p {
 
   #bunker-index-info{
     min-height: 258px;
-    width: 19vw;
+    width: 22vw;
     border-bottom: 1px solid #FFDFE1;
     border-left: 1px solid #FFDFE1;
     border-right: 1px solid #FFDFE1;
@@ -59,8 +59,8 @@ h1, h2, p {
   }
 }
 
-.cards {
-  width: 60vw;
+.cards-index {
+  width: 60%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -72,7 +72,7 @@ h1, h2, p {
 
 .map-index{
   object-fit: cover;
-  width: 40vw;
+  width: 36%;
   height: 72vh;
   margin-bottom: 50px;
 }
