@@ -1,3 +1,4 @@
+
 .navbar-lewagon {
   justify-content: space-between;
   background: rgb(0, 0, 0);
@@ -20,4 +21,10 @@
   box-sizing: border-box;
   font-style: normal;
   margin:auto;
+}
+
+#bunkerz-text > a > img{
+  height: 100%;
+  width: 193px;
+  object-fit: cover;
 }
