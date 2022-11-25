@@ -8,30 +8,30 @@
 </div>
 
 <%= simple_form_for (@bunker) do |f| %>
-    <div class="form-group" style="width:400px;">
+    <div class="form-group-alberto" style="width:400px;">
        <%= f.input :title %>
       </p>
     </div>
-    <div class="form-group" style="width:400px">
+    <div class="form-group-alberto" style="width:400px">
       <%= f.input :description %>
     </div>
-    <div class="form-group" style="width:400px">
+    <div class="form-group-alberto" style="width:400px">
       <%= f.input :location %>
     </div>
-    <div class="form-group" style="width:400px">
+    <div class="form-group-alberto" style="width:400px">
       <%= f.input :price %>
     </div>
-    <div class="form-group" style="width:400px">
+    <div class="form-group-alberto" style="width:400px">
       <%= f.input :feature %>
     </div>
-    <div class="form-group" style="width:400px">
+    <div class="form-group-alberto" style="width:400px">
       <%= f.input :summary %>
     </div>
-    <div class="form-group" style="width:400px">
+    <div class="form-group-alberto" style="width:400px">
      <%= f.input :photo, as: :file %>
     </div>
     <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <div class="button" style:="width:300px, align-items:center">
-       <%= f.button :submit%>
+    <div class="button-new">
+       <%= f.button :submit, value: "Create Bunker"%>
     </div>
   <% end %>
