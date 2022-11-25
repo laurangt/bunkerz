@@ -12,13 +12,20 @@
   width: 50%;
 }
 
+.bunker .bunker_info > img {
+  object-fit: cover;
+  width: 88%;
+  height: 68%;
+}
+
+
 .bunker .bunker_title {
   color: #8E5AFB;
 }
 
 .form-group{
   align-content: center;
-  margin-top: 110px;
+  margin-top: 176px;
   width: 50%;
 }
 
@@ -39,7 +46,7 @@
 }
 
 .review_map_card {
-  width: 49%;
+  width: 44%;
 }
 
 .display {
@@ -68,7 +75,7 @@
 
 .display_rating > p{
  text-align: center;
- margin-left: 495px;
+ margin-left: 430px;
 }
 
 .display_rating .rating > p{
