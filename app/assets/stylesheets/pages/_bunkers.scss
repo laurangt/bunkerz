@@ -1,5 +1,6 @@
 body {
   background-color: #192026;
+  min-height: 100vh;
 }
 
 .map {
@@ -15,17 +16,7 @@ body {
   padding-right: 50px;
 }
 
-h1 {
-  font-family: 'Roboto';
-  color: #F5F5F5;
-}
-
-h2 {
-  font-family: 'Roboto';
-  color: #F5F5F5;
-}
-
-p {
+h1, h2, p {
   font-family: 'Roboto';
   color: #F5F5F5;
 }
@@ -46,6 +37,28 @@ p {
   justify-content: space-evenly;
 }
 
+.bunker-index{
+  padding: 0 50px;
+
+  img{
+    height: 200px;
+    width: 19vw;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  #bunker-index-info{
+    min-height: 258px;
+    width: 19vw;
+    border-bottom: 1px solid #FFDFE1;
+    border-left: 1px solid #FFDFE1;
+    border-right: 1px solid #FFDFE1;
+    padding: 10px;
+  }
+}
+
 .cards {
   width: 60vw;
   display: flex;
@@ -54,8 +67,21 @@ p {
 }
 
 .index-map-cont {
-  padding-left: 15px;
-  padding-top: 50px;
-  display: flex;
+  margin-top: 45px;
+}
 
+.map-index{
+  object-fit: cover;
+  width: 40vw;
+  height: 72vh;
+  margin-bottom: 50px;
+}
+
+.form-index{
+  margin: 0 50px;
+
+  .btn-primary{
+    background-color: #8E5AFB;
+    border: #8E5AFB;
+  }
 }
