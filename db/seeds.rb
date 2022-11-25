@@ -7,16 +7,36 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # require "open-uri"
-require 'faker'
-4.times do
-  Bunker.create(
-    location: Faker::Address.full_address,
-    title: Faker::App.name,
-    description: Faker::Movie.quote,
-    price: Faker::Number.number(digits: 4),
-    feature: 'Bathroom',
-    summary: 'Cooler',
-    image_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimagenes.20minutos.es%2Ffiles%2Fog_thumbnail%2Fuploads%2Fimagenes%2F2022%2F07%2F04%2Fbunker-blockhaus.jpeg&imgrefurl=https%3A%2F%2Fwww.20minutos.es%2Fviajes%2Fdestinos%2Fpueblo-cerca-madrid-colmenar-arroyo-puentes-bunker-guerra-civil-5025104%2F&tbnid=8bEVcrO401GFKM&vet=12ahUKEwirkaz388b7AhUGBRoKHfcrBgAQMygDegUIARDhAQ..i&docid=oe0fojeFctP6GM&w=1200&h=675&q=bunker&ved=2ahUKEwirkaz388b7AhUGBRoKHfcrBgAQMygDegUIARDhAQ",
-    user_id: 5
-  )
-end
+
+
+Bunker.create!(
+  title: 'Mingds',
+  description: 'Nice',
+  price: 2000,
+  feature: 'Bathroom',
+  summary: 'Cooler',
+  user_id: User.last.id
+)
+# bunker1 = Bunker.new
+# bunker1.title = 'Inssbruck Bunker'
+# bunker1.description = 'Nice'
+# bunker1.price =  2000
+# bunker1.feature = 'Bathroom'
+# bunker1.summary = 'Cooler'
+# bunker1.user_id = 2
+# bunker1.save
+
+
+
+# new_bunker = Bunker.new(
+#   title: 'Inssbruck Bunker',
+#   location: 'Inssbruck',
+#   description: 'Nice',
+#   price: 2000,
+#   feature: 'Bathroom',
+#   summary: 'Cooler',
+#   user_id: 4
+# )
+
+# new_bunker.save
+# puts new_bunker.title
