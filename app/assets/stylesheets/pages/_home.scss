@@ -14,10 +14,15 @@
 .title {
   color: #ffffff;
   font-size: 72px;
-  width: 500px;
-  letter-spacing: 11px;
+  width: 52vw;
+  height: 25vh;
+  letter-spacing: 0.25em;
   text-shadow: 0px 4px 10px grey;
   font-family: 'Roboto', sans-serif;
+  padding-left: 50px;
+  margin: 0;
+  line-height: 82px;
+  font-weight: 900;
 }
 
 .custom-select {
@@ -28,4 +33,17 @@
   font-size: large;
   text-align-last:left;
   padding-left: 12px;
+}
+
+
+form > #location{
+  margin-left: 50px;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+}
+
+input.btn.btn-dark{
+  font-size: 14px;
 }
