@@ -2,24 +2,23 @@
   color: rgb(255, 255, 255)
 }
 
-.bunker {
+.bunker_card {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.bunker .bunker_info {
+.bunker_card .bunker_info {
   width: 50%;
 }
 
-.bunker .bunker_info > img {
+.bunker_card .bunker_info > img {
   object-fit: cover;
   width: 88%;
   height: 68%;
 }
 
-
-.bunker .bunker_title {
+.bunker_card .bunker_title {
   color: #8E5AFB;
 }
 
@@ -52,7 +51,9 @@
 .display {
   color: rgb(0, 0, 0);
   margin-right: 5px;
+  margin-bottom: 20px;
 }
+
 .display_user {
   width: 35%;
   border-radius: 5px;
