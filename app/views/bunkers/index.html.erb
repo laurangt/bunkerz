@@ -23,9 +23,9 @@
                 <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
             <% end %>
                 <div id="bunker-index-info">
-                  <h2><%= bunker.title %></h2>
+                  <h2 class="b_title_info"><%= bunker.title %></h2>
                   <p><%= bunker.summary %></p>
-                  <p><%= bunker.price %>€</p>
+                  <p class="bunker_price"><%= bunker.price %>€</p>
                 </div>
               <% end %>
         </div>
