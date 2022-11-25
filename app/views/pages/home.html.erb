@@ -3,7 +3,7 @@
     <h1 class="title">Bonkers for Bunkerz</h1>
 
     <%= form_with url: bunkers_path, method: :get, class: "d-flex" do %>
-      <%= select_tag(:location, options_for_select([['Berlin'], ['Madrid']]))  %>
+      <%= select_tag(:location, options_for_select([['Himara'], ['Tiran'], ['Pogradec'], ['KorÇe'], ['Durrës']]))  %>
       <%= submit_tag "Search", class: "btn btn-dark"%>
     <% end %>
 

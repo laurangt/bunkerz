@@ -20,7 +20,7 @@
         <div class="bunker-index">
             <%= link_to bunker_path(bunker) do %>
                <% if bunker.photo.key.present? %>
-                <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+                <%= cl_image_tag bunker.photo.key, crop: :fill, style: "object-fit: fill;"%>
             <% end %>
                 <div id="bunker-index-info">
                   <h2 class="b_title_info"><%= bunker.title %></h2>
