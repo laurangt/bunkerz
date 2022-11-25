@@ -17,7 +17,7 @@
   <div class="index-map-cont">
     <div class="cards-index col-6 d-flex">
       <% @bunkers.each do |bunker| %>
-        <div class="bunker-index col-6">
+        <div class="bunker-index">
             <%= link_to bunker_path(bunker) do %>
                <% if bunker.photo.key.present? %>
                 <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>

@@ -6,13 +6,14 @@
 <div class="container">
   <div class="bunker_card">
     <div class="bunker_info">
-      <h1 class="bunker_title"> <%= @bunker.title %></h1>
-      <% if @bunker.user.photo.key.present? %>
-        <p class="profile_pic_host"><%= cl_image_tag @bunker.user.photo.key, crop: :fill%></p>
-      <% end %>
-      <h2 class="host_title"> Bunker hosted by <%= @bunker.user.username %></h2>
-      <p><%= @bunker.location %></p>
-      <p><%= @bunker.summary %></p>
+      <h1 style="width: 1000px;"><%= @bunker.title %> - <%= @bunker.location %></h1>
+        <% if @bunker.user.photo.key.present? %>
+      <div class="profile_pic_host d-flex" style="align-items:center;">
+          <%= cl_image_tag @bunker.user.photo.key, crop: :fill%>
+        <% end %>
+      <h3> Bunker hosted by <%= @bunker.user.username %></h2>
+      </div>
+      <p style="margin-right: 20px"><%= @bunker.summary %></p>
       <%= cl_image_tag @bunker.photo.key, height: 300, width: 400, crop: :fill %>
       <%# <p> Price: <%= @bunker.price >€</p> %>
     </div>
@@ -33,11 +34,11 @@
 
 
   <div class="info">
-    <div class="bunker_description">
+    <div class="bunker_description" style="width: 45%; margin-top: 10px;">
       <h2>The bunker:</h2>
       <p><%= @bunker.description %></p>
     </div>
-    <div class="bunker_feature">
+    <div class="bunker_feature" style="margin-top: 10px;">
       <h2>Special features:</h2>
       <p><%= @bunker.feature %></p>
     </div>
@@ -50,15 +51,13 @@
       <div class="submit-review">
         <%= simple_form_for [@bunker, @review] do |f| %>
         <div class="review">
-          <div>
-            <%= f.input :comment, placeholder:"Please enter your comment here" %>
-          </div>
+          <%= f.input :comment, placeholder:"Please enter your comment here" %>
           <div class="rating">
             <%= f.label :rating %>
             <%= f.select :rating, options_for_select([["Please select one", ""], 5, 4, 3, 2, 1]) %>
           </div>
+          <%= f.submit "Submit your review", class: "btn btn-primary mt-3", style: "background-color: #8E5AFB; border: 1px solid #8E5AFB" %>
         </div>
-          <%= f.submit "Submit your review", class: "btn btn-primary m-3" %>
         <% end %>
       </div>
 

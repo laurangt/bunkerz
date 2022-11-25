@@ -1,3 +1,6 @@
+h1, h2, h3, p{
+  font-family: "roboto";
+}
 .container {
   color: rgb(255, 255, 255)
 }
@@ -92,7 +95,29 @@
   object-fit: cover;
 }
 
-.profile_pic_host{
+.profile_pic_host > img{
   height: 50px;
   width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+h1{
+  padding-left: 26px;
+}
+
+select#review_rating{
+  padding: 5px;
+  font-family: 'roboto';
+  margin-left: 5px;
+  border: 1px solid #8E5AFB;
+}
+
+input{
+  border: 1px solid #8E5AFB;
+  background-color: #8E5AFB;
+  color: white;
+  padding: 10px;
+  font-family: 'roboto';
+  border-radius: 5px;
 }
