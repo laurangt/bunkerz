@@ -1,0 +1,84 @@
+.container {
+  color: rgb(255, 255, 255)
+}
+
+.bunker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.bunker .bunker_info {
+  width: 50%;
+}
+
+.bunker .bunker_info > img {
+  object-fit: cover;
+  width: 88%;
+  height: 68%;
+}
+
+
+.bunker .bunker_title {
+  color: #8E5AFB;
+}
+
+.form-group{
+  align-content: center;
+  margin-top: 176px;
+  width: 50%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info .bunker_feature {
+  width: 50%;
+  text-align: left;
+}
+
+.second_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review_map_card {
+  width: 44%;
+}
+
+.display {
+  color: rgb(0, 0, 0);
+  margin-right: 5px;
+}
+.display_user {
+  width: 35%;
+  border-radius: 5px;
+  text-align: left;
+  border: 1px solid #8E5AFB;
+  color: white;
+  background-color: #8E5AFB;
+  margin-bottom: 10px;
+  height: 9vh;
+  padding: 10px;
+}
+
+.display_rating {
+  padding: 10px;
+  border: 1px solid #FFDFE1;
+  background-color: #FFDFE1;
+  border-radius: 5px;
+  height: 9vh;
+}
+
+.display_rating > p{
+ text-align: center;
+ margin-left: 430px;
+}
+
+.display_rating .rating > p{
+  text-align: right;
+  margin-top: -25px;
+}
