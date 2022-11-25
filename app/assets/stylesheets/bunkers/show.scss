@@ -20,11 +20,12 @@
 
 .bunker_card .bunker_title {
   color: #8E5AFB;
+  padding-left: 24px;
 }
 
-.form-group{
+.form-group-bunker-date {
   align-content: center;
-  margin-top: 176px;
+  margin-top: 200px;
   width: 50%;
 }
 
@@ -75,11 +76,12 @@
 }
 
 .display_rating > p{
- text-align: center;
- margin-left: 430px;
+  text-align: center;
+  margin-left: 415px;
 }
 
-.display_rating .rating > p{
+.display_rating .rating .rating_number {
+  color: rgb(0, 0, 0);
   text-align: right;
   margin-top: -25px;
 }
