@@ -44,23 +44,28 @@
 
 .display {
   color: rgb(0, 0, 0);
-  display: flex;
   margin-right: 5px;
 }
 .display_user {
-  width: 25%;
-  border: 1px solid #FFDFE1;
-  background-color: #FFDFE1;
-  border-radius: 25px;
-  text-align: center;
+  width: 35%;
+  border-radius: 5px;
+  text-align: left;
+  border: 1px solid #8E5AFB;
+  color: white;
+  background-color: #8E5AFB;
+  margin-bottom: 10px;
+  height: 9vh;
+  padding: 10px;
 }
 
 .display_rating {
+  padding: 10px;
   width: 75%;
-  border: 1px solid #8E5AFB;
-  background-color: #8E5AFB;
-  border-radius: 25px;
+  border: 1px solid #FFDFE1;
+  background-color: #FFDFE1;
+  border-radius: 5px;
   margin-left: 5px;
+  height: 9vh;
 }
 
 .display_rating .rating{
@@ -70,7 +75,7 @@
 
 .display_rating > p{
  text-align: center;
- margin-left: 345px;
+ margin-left: 325px;
 }
 
 .display_rating .rating > p{
