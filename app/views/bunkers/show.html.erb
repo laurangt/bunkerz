@@ -7,6 +7,9 @@
   <div class="bunker_card">
     <div class="bunker_info">
       <h1 class="bunker_title"> <%= @bunker.title %></h1>
+      <% if @bunker.user.photo.key.present? %>
+        <p class="profile_pic_host"><%= cl_image_tag @bunker.user.photo.key, crop: :fill%></p>
+      <% end %>
       <h2 class="host_title"> Bunker hosted by <%= @bunker.user.username %></h2>
       <p><%= @bunker.location %></p>
       <p><%= @bunker.summary %></p>

@@ -1,36 +1,37 @@
 <%= link_to root_path do %>
-      <i class="fa-solid fa-arrow-left"></i>
+      <i class="fa-solid fa-arrow-left fa-2xl m-4" style="color: white;"></i>
 <% end %>
 
 <%# search-bar %>
-<%= form_with url: bunkers_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find bunker"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
+<div class="form-index">
+  <%= form_with url: bunkers_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find bunker"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
   <div class="index-map-cont">
-    <div class="cards col-6">
+    <div class="cards-index col-6 d-flex">
       <% @bunkers.each do |bunker| %>
-        <div class="bunker col-6">
-            <%# if bunker.photo.key.present? %>
-              <%= link_to bunker_path(bunker) do %>
-                <%#= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
-                <h2><%= bunker.title %></h2>
-                <%= bunker.summary %>
-                <p><%= bunker.price %>€</p>
-                <%= bunker.id %>
+        <div class="bunker-index col-6">
+            <%= link_to bunker_path(bunker) do %>
+               <% if bunker.photo.key.present? %>
+                <%= cl_image_tag bunker.photo.key, height: 100, width: 100, crop: :fill %>
+            <% end %>
+                <div id="bunker-index-info">
+                  <h2><%= bunker.title %></h2>
+                  <p><%= bunker.summary %></p>
+                  <p><%= bunker.price %>€</p>
+                </div>
               <% end %>
-            <%# end %>
         </div>
       <% end %>
     </div>
-
-    <div class="map col-6"
+    <div class="map-index col-6"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
