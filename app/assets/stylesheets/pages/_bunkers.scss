@@ -1,0 +1,61 @@
+body {
+  background-color: #192026;
+}
+
+.map {
+  height: 400px;
+  width: 300px;
+  position: sticky;
+  top: 0;
+  right: 0;
+}
+
+.container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+h1 {
+  font-family: 'Roboto';
+  color: #F5F5F5;
+}
+
+h2 {
+  font-family: 'Roboto';
+  color: #F5F5F5;
+}
+
+p {
+  font-family: 'Roboto';
+  color: #F5F5F5;
+}
+
+.index-map-cont {
+  display: flex;
+  gap: 10px;
+}
+
+.bunker {
+  display: flex;
+  background-color: #192026;
+  border: 2px;
+  border-style: solid;
+  border-color: #FFDFE1;
+  text-align: center;
+  height: 300px;
+  justify-content: space-evenly;
+}
+
+.cards {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.index-map-cont {
+  padding-left: 15px;
+  padding-top: 50px;
+  display: flex;
+
+}

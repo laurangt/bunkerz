@@ -4,7 +4,7 @@
 
     <%= form_with url: bunkers_path, method: :get, class: "d-flex" do %>
       <%= select_tag(:location, options_for_select([['Berlin'], ['Madrid']]))  %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn btn-dark"%>
     <% end %>
 
 
