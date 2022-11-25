@@ -7,7 +7,7 @@
   <div class="container" style="margin-bottom: 50px;">
     <div class="container_profile">
       <% if @user.photo.present? %>
-        <p style="text-align: left;"><%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill%></p>
+        <p><%= cl_image_tag @user.photo.key, style: "text-align: left; width: 200px; height: 200px; border-radius: 50%;", crop: :fill%></p>
       <% end %>
       <div class="container_profile_text">
         <p style="color: white;"><%= @user.username %> <i class="fa-regular fa-circle-check"></i></p>
@@ -26,7 +26,7 @@
       <div class="d-flex flex_host">
         <h2 style="color: white;">My Bunkers</h2>
         <%= link_to new_bunker_path do %>
-        <div style="display: flex;margin-left: 5px;">
+        <div class="plus" style="display: flex;margin-left: 5px;">
           <i class="fa-solid fa-circle-plus m-1" style="color: #D667AA; font-size: 30px;"></i>
         </div>
         <% end %>
