@@ -2,30 +2,30 @@
   color: rgb(255, 255, 255)
 }
 
-.bunker {
+.bunker_card {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.bunker .bunker_info {
+.bunker_card .bunker_info {
   width: 50%;
 }
 
-.bunker .bunker_info > img {
+.bunker_card .bunker_info > img {
   object-fit: cover;
   width: 88%;
   height: 68%;
 }
 
-
-.bunker .bunker_title {
+.bunker_card .bunker_title {
   color: #8E5AFB;
+  padding-left: 24px;
 }
 
-.form-group{
+.form-group-bunker-date {
   align-content: center;
-  margin-top: 176px;
+  margin-top: 200px;
   width: 50%;
 }
 
@@ -52,7 +52,9 @@
 .display {
   color: rgb(0, 0, 0);
   margin-right: 5px;
+  margin-bottom: 20px;
 }
+
 .display_user {
   width: 35%;
   border-radius: 5px;
@@ -74,11 +76,12 @@
 }
 
 .display_rating > p{
- text-align: center;
- margin-left: 430px;
+  text-align: center;
+  margin-left: 415px;
 }
 
-.display_rating .rating > p{
+.display_rating .rating .rating_number {
+  color: rgb(0, 0, 0);
   text-align: right;
   margin-top: -25px;
 }
