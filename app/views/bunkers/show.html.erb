@@ -6,7 +6,7 @@
 <div class="container">
   <div class="bunker_card">
     <div class="bunker_info">
-      <h1 style="width: 1000px;"><%= @bunker.title %> - <%= @bunker.location %></h1>
+      <h1 style="width: 1000px; color: #8E5AFB; -webkit-text-stroke: 1px white;"><%= @bunker.title %> - <%= @bunker.location %></h1>
         <% if @bunker.user.photo.key.present? %>
       <div class="profile_pic_host d-flex" style="align-items:center;">
           <%= cl_image_tag @bunker.user.photo.key, crop: :fill%>
