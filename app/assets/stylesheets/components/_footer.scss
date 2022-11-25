@@ -5,6 +5,10 @@
   height: 100px;
   padding: 20px 50px;
   flex-flow: column;
+  bottom: 0;
+  width: 100%;
+  position: static;
+  margin-top: auto;
 }
 .footer-links {
   display: flex;
