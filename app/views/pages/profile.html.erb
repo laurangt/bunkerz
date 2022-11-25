@@ -10,7 +10,7 @@
         <p style="text-align: left;"><%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill%></p>
       <% end %>
       <div class="container_profile_text">
-        <p style="color: white;"><%= @user.username %></p>
+        <p style="color: white;"><%= @user.username %> <i class="fa-regular fa-circle-check"></i></p>
         <p style="color: white;">email: <%= @user.email %></p>
       </div>
       <div class="container_p_text">
@@ -22,11 +22,11 @@
 
   <div class="container d-flex" style="border-top: 1px solid #8E5AFB;">
     <%# My bunkers as a host %>
-    <div id="my-bunkers" style="width: 30vw; padding-right: 50px; padding-top: 25px;">
-      <div class="d-flex">
+    <div id="my-bunkers" style="width: 30vw; padding-right: 50px; padding-top: 25px; text-align:center;">
+      <div class="d-flex flex_host">
         <h2 style="color: white;">My Bunkers</h2>
         <%= link_to new_bunker_path do %>
-        <div style="display: flex;">
+        <div style="display: flex;margin-left: 5px;">
           <i class="fa-solid fa-circle-plus m-1" style="color: #D667AA; font-size: 30px;"></i>
         </div>
         <% end %>

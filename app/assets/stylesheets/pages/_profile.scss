@@ -7,13 +7,14 @@
 }
 
 .container_profile .container_profile_text {
-  border: 1px solid green;
   padding: 30px;
 }
 
 .container_profile .container_p_text {
-  border: 1px solid green;
   padding: 30px;
   width: 50%;
+}
 
+.flex_host {
+  justify-content: center;
 }
